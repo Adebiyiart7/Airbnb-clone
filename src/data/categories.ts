@@ -28,12 +28,12 @@ const categories: CategoryProps[] = [
   { id: 9, name: "Artic", image: artic },
   { id: 10, name: "Amazing views", image: amazingViews },
   { id: 11, name: "Surfing", image: surfing },
-  { id: 13, name: "Beachfront", image: amazingPools },
-  { id: 14, name: "Beachfront", image: amazingPools },
-  { id: 15, name: "Beachfront", image: amazingPools },
-  { id: 16, name: "Beachfront", image: amazingPools },
-  { id: 17, name: "Beachfront", image: amazingPools },
-  { id: 18, name: "Beachfront", image: amazingPools },
+  // { id: 13, name: "Beachfront", image: amazingPools },
+  // { id: 14, name: "Beachfront", image: amazingPools },
+  // { id: 15, name: "Beachfront", image: amazingPools },
+  // { id: 16, name: "Beachfront", image: amazingPools },
+  // { id: 17, name: "Beachfront", image: amazingPools },
+  // { id: 18, name: "Beachfront", image: amazingPools },
 ];
 
 export default categories;

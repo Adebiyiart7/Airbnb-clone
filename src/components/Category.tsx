@@ -4,16 +4,19 @@ import { CategoryProps } from "../data/categories";
 interface Props {
   active: boolean;
   category: CategoryProps;
+  onClick: () => void;
 }
 
-const Category = ({ active, category }: Props) => {
+const Category = ({ active, category, onClick }: Props) => {
   return (
     <Stack
       alignItems="center"
+      cursor="pointer"
       opacity={active ? 1 : 0.65}
       borderBottomWidth={active ? 2 : 0}
       borderColor="black"
       pb={4}
+      onClick={onClick}
     >
       <Image
         src={category.image}

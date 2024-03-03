@@ -4,7 +4,12 @@ import Category from "./Category";
 import Filters from "./Filters";
 import ToggleTax from "./ToggleTax";
 
-const Categories = () => {
+interface Props {
+  activeCategory: number;
+  setActiveCategory: (id: number) => void;
+}
+
+const Categories = ({ activeCategory, setActiveCategory }: Props) => {
   return (
     <HStack gap={6}>
       <Flex
@@ -17,7 +22,11 @@ const Categories = () => {
         }}
       >
         {categories.map((category) => (
-          <Category category={category} active={category.id === 1} />
+          <Category
+            category={category}
+            active={category.id === activeCategory}
+            onClick={() => setActiveCategory(category.id)}
+          />
         ))}
       </Flex>
       <HStack gap={5}>

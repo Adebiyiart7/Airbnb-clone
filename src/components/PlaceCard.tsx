@@ -9,6 +9,7 @@ const PlaceCard = ({ place }: Props) => {
   return (
     <Box maxW="sm">
       <Image
+        width="100%"
         src={place.images[0]}
         borderRadius="lg"
         aspectRatio={1}
