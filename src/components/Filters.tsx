@@ -1,9 +1,10 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 import { BiSliderAlt } from "react-icons/bi";
 
 const Filters = () => {
   return (
     <HStack
+      cursor="pointer"
       height="48px"
       borderWidth={1}
       borderRadius={14}

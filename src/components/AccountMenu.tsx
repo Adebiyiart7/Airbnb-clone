@@ -1,7 +1,6 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Avatar,
-  HStack,
   Button,
   Menu,
   MenuButton,
