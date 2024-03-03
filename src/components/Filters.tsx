@@ -1,4 +1,4 @@
-import { Button, HStack, Text } from "@chakra-ui/react";
+import { HStack, Text } from "@chakra-ui/react";
 import { BiSliderAlt } from "react-icons/bi";
 
 const Filters = () => {
