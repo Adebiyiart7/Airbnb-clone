@@ -1,10 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import Home from "./pages/Home";
+import PlaceDetail from "./pages/PlaceDetail";
+// import Home from "./pages/Home";
 
 function App() {
   return (
     <Box>
-      <Home />
+      {/* <Home /> */}
+      <PlaceDetail />
     </Box>
   );
 }

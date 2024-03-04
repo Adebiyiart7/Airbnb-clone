@@ -23,9 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <Box paddingX={screenWidth > 600 ? 10 : 4} mb={5} borderBottomWidth="1px">
-        <NavBar screenWidth={screenWidth} />
-      </Box>
+      <NavBar fullNavBar />
       <Box paddingX={screenWidth > 600 ? 10 : 4}>
         <Categories
           activeCategory={activeCategory}

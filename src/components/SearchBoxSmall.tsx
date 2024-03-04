@@ -2,22 +2,22 @@ import { Box, Center, Divider, HStack, Hide, Text } from "@chakra-ui/react";
 import { IoSearch } from "react-icons/io5";
 
 interface Props {
-  hidden: boolean;
+  fullNavBar: boolean;
 }
 
-const SearchBoxSmall = ({ hidden }: Props) => {
+const SearchBoxSmall = ({ fullNavBar }: Props) => {
   return (
     <HStack
       borderWidth={1}
-      px={2}
-      py={2}
+      p={2}
       pl={4}
+      mr={4}
       gap={4}
-      hidden={hidden}
       boxShadow="lg"
       borderRadius={100}
       flex={1}
       justifyContent="space-between"
+      maxWidth={!fullNavBar ? "400px" : "auto"}
     >
       <HStack gap={4}>
         <Text

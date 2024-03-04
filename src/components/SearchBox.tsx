@@ -2,14 +2,9 @@ import { Box, Center, Divider, HStack } from "@chakra-ui/react";
 import SearchBoxField from "./SearchBoxField";
 import { IoSearch } from "react-icons/io5";
 
-interface Props {
-  hidden: boolean;
-}
-
-const SearchBox = ({ hidden }: Props) => {
+const SearchBox = () => {
   return (
     <HStack
-      hidden={hidden}
       alignSelf="center"
       boxShadow="lg"
       rounded={15000}

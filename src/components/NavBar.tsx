@@ -1,4 +1,4 @@
-import { Box, HStack, Stack } from "@chakra-ui/react";
+import { HStack, Hide, Stack, useMediaQuery } from "@chakra-ui/react";
 import Logo from "./Logo";
 import NavBarCenter from "./NavBarCenter";
 import NavBarRight from "./NavBarRight";
@@ -7,25 +7,33 @@ import SearchBoxSmall from "./SearchBoxSmall";
 import Filters from "./Filters";
 
 interface Props {
-  screenWidth: number;
+  fullNavBar: boolean;
 }
 
-const NavBar = ({ screenWidth }: Props) => {
+const NavBar = ({ fullNavBar = false }: Props) => {
+  const [over900px] = useMediaQuery("(min-width: 900px)");
+  const [over650px] = useMediaQuery("(min-width: 650px)");
+  const [over600px] = useMediaQuery("(min-width: 600px)");
+
   return (
-    <Stack>
+    <Stack paddingX={over600px ? 10 : 4} mb={5} borderBottomWidth="1px">
       <HStack paddingY={4} justifyContent="space-between">
-        <Box hidden={screenWidth < 650}>
+        <Hide breakpoint="(max-width: 650px)">
           <Logo />
-        </Box>
-        <NavBarCenter hidden={screenWidth < 900} />
-        <SearchBoxSmall hidden={screenWidth > 900} />
-        {screenWidth > 650 ? (
-          <NavBarRight screenWidth={screenWidth} />
+        </Hide>
+        {!over900px || !fullNavBar ? (
+          <SearchBoxSmall fullNavBar={fullNavBar} />
         ) : (
-          <Filters fullRounded={true} />
+          <NavBarCenter />
         )}
+        {over650px ? <NavBarRight /> : <Filters fullRounded={true} />}
       </HStack>
-      <SearchBox hidden={screenWidth < 900} />
+
+      {fullNavBar && (
+        <Hide breakpoint="(max-width: 900px)">
+          <SearchBox />
+        </Hide>
+      )}
     </Stack>
   );
 };
