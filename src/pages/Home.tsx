@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <Box paddingX={screenWidth > 600 ? 10 : 4} mb={5} borderWidth="1px">
+      <Box paddingX={screenWidth > 600 ? 10 : 4} mb={5} borderBottomWidth="1px">
         <NavBar screenWidth={screenWidth} />
       </Box>
       <Box paddingX={screenWidth > 600 ? 10 : 4}>
