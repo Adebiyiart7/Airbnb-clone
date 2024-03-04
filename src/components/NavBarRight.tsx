@@ -12,7 +12,7 @@ const NavBarRight = ({ screenWidth }: Props) => {
       <Link hidden={screenWidth < 850} fontWeight="500">
         Airbnb your home
       </Link>
-      <VscGlobe hidden={screenWidth < 850} size={20} />
+      <VscGlobe size={20} />
       <AccountMenu />
     </HStack>
   );

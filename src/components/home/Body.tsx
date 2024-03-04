@@ -18,7 +18,7 @@ const Body = ({ activeCategory }: Props) => {
     setGeneratedPlace(null);
     setTimeout(() => {
       setGeneratedPlace(generateFakePlace);
-    }, 1000);
+    }, 10000000);
   }, [activeCategory]);
 
   return (

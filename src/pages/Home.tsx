@@ -32,8 +32,8 @@ const Home = () => {
           setActiveCategory={setActiveCategory}
         />
         <Body activeCategory={activeCategory} />
-        {/* <Footer /> */}
       </Box>
+      <Footer />
     </>
   );
 };
