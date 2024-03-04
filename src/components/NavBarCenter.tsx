@@ -1,8 +1,12 @@
 import { Box, Link } from "@chakra-ui/react";
 
-const NavBarCenter = () => {
+interface Props {
+  hidden: boolean;
+}
+
+const NavBarCenter = ({ hidden }: Props) => {
   return (
-    <Box display="flex" flexDirection="row" gap={10}>
+    <Box display="flex" flexDirection="row" gap={10} hidden={hidden}>
       <Link fontWeight="bold" fontSize={18}>
         Stays
       </Link>

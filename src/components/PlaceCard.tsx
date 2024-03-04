@@ -7,7 +7,7 @@ interface Props {
 
 const PlaceCard = ({ place }: Props) => {
   return (
-    <Box maxW="sm">
+    <Box width={"100%"} mx="auto">
       <Image
         width="100%"
         src={place.images[0]}

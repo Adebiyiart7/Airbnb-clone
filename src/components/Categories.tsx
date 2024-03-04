@@ -1,4 +1,4 @@
-import { Flex, HStack } from "@chakra-ui/react";
+import { Flex, HStack, Hide } from "@chakra-ui/react";
 import categories from "../data/categories";
 import Category from "./Category";
 import Filters from "./Filters";
@@ -29,10 +29,12 @@ const Categories = ({ activeCategory, setActiveCategory }: Props) => {
           />
         ))}
       </Flex>
-      <HStack gap={5}>
-        <Filters />
-        <ToggleTax />
-      </HStack>
+      <Hide breakpoint="(min-width: 650px)">
+        <HStack gap={5}>
+          <Filters />
+          <ToggleTax />
+        </HStack>
+      </Hide>
     </HStack>
   );
 };

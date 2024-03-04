@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Skeleton, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Skeleton } from "@chakra-ui/react";
 import places, { PlaceProps } from "../../data/places";
 import PlaceCard from "../PlaceCard";
 import categories from "../../data/categories";
@@ -9,20 +9,20 @@ interface Props {
 }
 
 const Body = ({ activeCategory }: Props) => {
-  const [generatedPlace, setGeneratedPlace] = useState<PlaceProps | null>();
+  const [generatedPlace, setGeneratedPlace] = useState<PlaceProps[] | null>();
 
   useEffect(() => {
-    const generateFakePlace: PlaceProps = Array.from({ length: 20 }, () =>
+    const generateFakePlace = Array.from({ length: 20 }, () =>
       places(categories.find((c) => c.id === activeCategory)?.name || "")
     );
     setGeneratedPlace(null);
     setTimeout(() => {
       setGeneratedPlace(generateFakePlace);
-    }, 122000);
+    }, 1000);
   }, [activeCategory]);
 
   return (
-    <SimpleGrid columns={{ sm: 12, md: 6, lg: 4 }} spacing={6} mt={3}>
+    <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={6} mt={3}>
       {generatedPlace
         ? generatedPlace.map((place) => <PlaceCard place={place} />)
         : [1, 2, 3, 4, 5, 6, 7, 8].map((_) => (

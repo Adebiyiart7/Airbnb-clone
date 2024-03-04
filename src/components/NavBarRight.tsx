@@ -2,11 +2,17 @@ import { HStack, Link } from "@chakra-ui/react";
 import { VscGlobe } from "react-icons/vsc";
 import AccountMenu from "./AccountMenu";
 
-const NavBarRight = () => {
+interface Props {
+  screenWidth: number;
+}
+
+const NavBarRight = ({ screenWidth }: Props) => {
   return (
     <HStack gap={5}>
-      <Link fontWeight="500">Airbnb your home</Link>
-      <VscGlobe size={20} />
+      <Link hidden={screenWidth < 850} fontWeight="500">
+        Airbnb your home
+      </Link>
+      <VscGlobe hidden={screenWidth < 850} size={20} />
       <AccountMenu />
     </HStack>
   );
