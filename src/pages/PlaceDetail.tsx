@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar";
-import PlaceDetailTopButton from "../components/PlaceDetailTopButton";
+import Body from "../components/place-detail/Body";
 
 const PlaceDetail = () => {
   return (
     <>
       <NavBar fullNavBar={false} />
-      <PlaceDetailTopButton />
+      <Body />
     </>
   );
 };

@@ -29,7 +29,7 @@ const Categories = ({ activeCategory, setActiveCategory }: Props) => {
           />
         ))}
       </Flex>
-      <Hide breakpoint="(min-width: 650px)">
+      <Hide breakpoint="(max-width: 650px)">
         <HStack gap={5}>
           <Filters />
           <ToggleTax />

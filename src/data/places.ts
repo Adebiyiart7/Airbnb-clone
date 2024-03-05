@@ -31,7 +31,7 @@ const dates = [
 
 const newCategories = categories.map((category) => category.name);
 
-const places = (activeCategory: string) => {
+const places = (activeCategory?: string) => {
   const category =
     newCategories[Math.floor(Math.random() * newCategories.length)];
   const location = locations[Math.floor(Math.random() * locations.length)];
@@ -39,11 +39,18 @@ const places = (activeCategory: string) => {
   const date = dates[Math.floor(Math.random() * dates.length)];
   const isNew = Math.random() < 0.5; // 50% chance of being true
   const price = Math.floor(Math.random() * (5000 - 500 + 1)) + 50; // Random price between 50 and 500
-  const images = [
-    `https://source.unsplash.com/random/600%6${Math.random()
-      .toString()
-      .slice(2, 4)}/?house-${activeCategory}`,
-  ];
+  const images = () => {
+    const imagesArray = [];
+    for (let i = 0; i < 9; i++) {
+      imagesArray.push(
+        `https://source.unsplash.com/random/600x6${Math.random()
+          .toString()
+          .slice(2, 3)}${i}/?house-${activeCategory || "building"}`
+      );
+    }
+
+    return imagesArray;
+  };
 
   return {
     id: Math.floor(Math.random() * 1000), // Random id between 0 and 999
@@ -54,7 +61,7 @@ const places = (activeCategory: string) => {
     date,
     price,
     isNew,
-    images,
+    images: images(),
   };
 };
 
