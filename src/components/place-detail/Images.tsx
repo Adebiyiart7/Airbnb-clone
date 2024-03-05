@@ -11,14 +11,14 @@ import image3 from "../../assets/detail-image-3.jpg";
 import image4 from "../../assets/detail-image-4.jpg";
 import image5 from "../../assets/detail-image-5.jpg";
 
-const height = 320;
+const height = 300;
 
 const Images = () => {
   const images = [image2, image3, image4, image5];
   const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
 
   return (
-    <HStack mt={4} gap={2} borderRadius={16}>
+    <HStack mt={4} gap={2} borderRadius={16} overflow="hidden">
       {isLargerThan700 && (
         <Box flex={1}>
           <Image height={height} width="100%" src={image1} objectFit="cover" />
