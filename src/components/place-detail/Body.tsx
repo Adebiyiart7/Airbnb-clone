@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import PlaceDetailTopButton from "../PlaceDetailTopButton";
 import Container from "../Container";
-import places from "../../data/places";
 import Images from "./Images";
+import Main from "./Main";
+import places from "../../data/places";
 
 const Body = () => {
   const place = places();
@@ -11,7 +12,8 @@ const Body = () => {
     <Box>
       <Container>
         <PlaceDetailTopButton />
-        <Images place={place} />
+        <Images />
+        <Main place={place} />
       </Container>
     </Box>
   );
