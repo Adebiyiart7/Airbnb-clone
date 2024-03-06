@@ -6,6 +6,7 @@ import AccountCard from "../AccountCard";
 import OwnerCredits from "./OwnerCredits";
 import RoomInfo from "./RoomInfo";
 import CheckoutCard from "../CheckoutCard";
+import Amenities from "./Amenities";
 
 interface Props {
   place: PlaceProps;
@@ -18,7 +19,7 @@ const CustomDivider = React.memo(() => (
 const Main = React.memo(({ place }: Props) => {
   return (
     <HStack mt={5} gap={10} mb={200} alignItems="flex-start">
-      <Box flex={3}>
+      <Box flex={3.3}>
         <HomeInfo place={place} />
         <CustomDivider />
         <AccountCard
@@ -42,8 +43,10 @@ const Main = React.memo(({ place }: Props) => {
         </Text>
         <CustomDivider />
         <RoomInfo />
+        <CustomDivider />
+        <Amenities />
       </Box>
-      <Box flex={2} pos="sticky" top={10}>
+      <Box flex={1.7} pos="sticky" top={10}>
         <CheckoutCard />
       </Box>
     </HStack>
