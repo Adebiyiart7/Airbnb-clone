@@ -1,4 +1,4 @@
-import { Box, Divider, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import HomeInfo from "../HomeInfo";
 import React from "react";
 import { PlaceProps } from "../../data/places";
@@ -7,18 +7,15 @@ import OwnerCredits from "./OwnerCredits";
 import RoomInfo from "./RoomInfo";
 import CheckoutCard from "../CheckoutCard";
 import Amenities from "./Amenities";
+import { CustomDivider } from "./Body";
 
 interface Props {
   place: PlaceProps;
 }
 
-const CustomDivider = React.memo(() => (
-  <Divider my={6} borderColor="gray.300" />
-));
-
 const Main = React.memo(({ place }: Props) => {
   return (
-    <HStack mt={5} gap={10} mb={200} alignItems="flex-start">
+    <HStack mt={5} gap={10} alignItems="flex-start">
       <Box flex={3.3}>
         <HomeInfo place={place} />
         <CustomDivider />
